@@ -92,6 +92,7 @@ export const verifyEmail = async (req, res) => {
       httpOnly: true,
       path: "/",
       maxAge: 24 * 60 * 60 * 1000,
+      secure: true,
     });
 
     res.json({
@@ -165,6 +166,7 @@ export const login = async (req, res) => {
       httpOnly: true,
       path: "/",
       maxAge: 24 * 60 * 60 * 1000,
+      secure: true,
     });
 
     res.json({
