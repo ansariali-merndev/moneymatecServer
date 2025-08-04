@@ -234,3 +234,16 @@ export const logout = async (req, res) => {
     handleError(error.message, "Failed to log out user");
   }
 };
+
+export const verifyToken = async (req, res) => {
+  const { token } = req.body;
+  try {
+    const _id = token.split(".")[1];
+    const user = await findUserById(_id);
+    return res.json({
+      success: user ? true : false,
+    });
+  } catch (error) {
+    handleError(error, "Unable to verify Token");
+  }
+};
