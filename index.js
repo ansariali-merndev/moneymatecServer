@@ -10,6 +10,7 @@ import { rootRouter } from "./router/root.router.js";
 const app = express();
 const port = env.port;
 
+console.log("Env: ", env.corsOrigin);
 app.use(
   cors({
     origin: env.corsOrigin,
